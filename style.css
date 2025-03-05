@@ -1,0 +1,340 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  /**** Colors *****/
+
+  --Primary-Violet: hsl(257, 40%, 49%);
+  --Primary-Soft: hsl(300, 69%, 71%);
+
+  /**** Typography *****/
+  --FontWeight-Bold: 700;
+  --FontWeight-Light: 400;
+  --FontFamily-Headings: "Poppins", serif;
+  --FontFamily-Body: "Open Sans", serif;
+}
+
+/*=====================================
+=            Reset Styles            =
+=====================================*/
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 61.25em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media only screen and (max-width: 55.19em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/*=====================================
+=      Wrapper/Container Styles      =
+=====================================*/
+body {
+  background-color: var(--Primary-Violet);
+  /* display: flex;
+  align-items: flex-end;
+  justify-content: center; */
+  min-height: 100vh;
+  /* border: 1px solid lime; */
+}
+.bg-image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+/* 
+@media only screen and (max-width: 49.06em) {
+  body {
+    min-height: 210vh;
+  }
+} */
+
+.container {
+  width: 90%;
+  position: absolute;
+  top: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  /* border: 1px solid lime; */
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: minmax(min-content, 6rem) minmax(min-content, 1fr) minmax(
+      min-content,
+      6rem
+    );
+  align-content: center;
+  align-items: center;
+  row-gap: 5rem;
+}
+
+/*========================
+=     header Styles      =
+=========================*/
+.header {
+  grid-column: 1/-1;
+  /* border: 1px solid lime; */
+
+  display: flex;
+  align-items: flex-end;
+}
+.header img {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+}
+@media only screen and (max-width: 49.06em) {
+  .header img {
+    max-width: 40%;
+  }
+}
+
+/*===============================
+=            Main Styles        =
+================================*/
+.main {
+  grid-column: 1/-1;
+  grid-row: 2 / span 4;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr) repeat(3, 1fr);
+  column-gap: 4rem;
+}
+@media only screen and (max-width: 49.06em) {
+  .main {
+    row-gap: 3rem;
+  }
+}
+
+/*================================
+=   main__illustration-mockups   =
+=================================*/
+.main__illustration-mockups {
+  grid-column: 1 / span 5;
+}
+@media only screen and (max-width: 49.06em) {
+  .main__illustration-mockups {
+    grid-column: 1 / -1;
+  }
+}
+
+.main__image {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+/*=============================
+=     Main Details Styles     =
+===============================*/
+.main__textblock {
+  grid-column: 6/10;
+  padding-top: 2rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-content: start;
+  justify-items: start;
+  color: #fff;
+}
+
+@media only screen and (max-width: 49.06em) {
+  .main__textblock {
+    grid-column: 1 / -1;
+    justify-items: center;
+  }
+}
+
+.main__heading {
+  grid-column: 1/-1;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+
+  font-size: calc(2rem + 1vw);
+  font-family: var(--FontFamily-Headings);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.main__text {
+  grid-column: 1/-1;
+  margin-bottom: 2.5rem;
+  font-size: 1.4rem;
+  font-family: var(--FontFamily-Body);
+  font-weight: 500;
+  line-height: 1.6;
+}
+@media only screen and (max-width: 49.06em) {
+  .main__text,
+  .main__heading {
+    text-align: center;
+    max-width: 72ch;
+  }
+}
+
+.main__link:link,
+.main__link:visited {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 3.5rem;
+
+  font-size: 2rem;
+  font-family: var(--FontFamily-Headings);
+  font-weight: 300;
+  color: var(--Primary-Violet);
+  text-decoration: none;
+  background-color: #fff;
+  border-radius: 20rem;
+  box-shadow: 0px 1rem 3rem rgba(0, 0, 0, 0.3);
+}
+
+.main__link:hover,
+.main__link:active {
+  background-color: var(--Primary-Soft);
+  color: #fff;
+}
+@media only screen and (max-width: 49.06em) {
+  .main__link:link {
+    width: 50%;
+  }
+}
+
+/*=================================
+=     Social Media linksStyles    =
+==================================*/
+
+.main__socials {
+  grid-column: 6/10;
+  grid-row: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+@media only screen and (max-width: 49.06em) {
+  .main__socials {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    justify-content: center;
+  }
+}
+
+.social__icon {
+  width: 2rem;
+  height: 2rem;
+  fill: #fff;
+}
+
+.socials__link:link,
+.socials__link:visited {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
+
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+
+.socials__link:hover .icon,
+.socials__link:active .icon {
+  border-color: var(--Primary-Soft);
+  fill: var(--Primary-Soft);
+}
+.socials__link:hover,
+.socials__link:active {
+  border-color: var(--Primary-Soft);
+}
+
+/*=====================================
+=            Footer Styles            =
+=====================================*/
+.attribution {
+  grid-column: 1/-1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 2rem;
+  color: #eee;
+}
+
+.attribution div {
+  display: flex;
+  align-items: center;
+  column-gap: 0.8rem;
+  font-size: 1.6rem; /* Slightly smaller font size */
+  padding-bottom: 0.4rem; /* Space for the border */
+}
+
+/*=========================
+=   Mentor Link Styles    =
+==========================*/
+
+.attribution .mentor {
+  padding-bottom: 0.8rem;
+  font-family: var(--FontFamily-Body), serif;
+}
+.attribution .mentor a:link {
+  color: aquamarine;
+}
+.attribution .mentor a:visited {
+  color: plum;
+}
+
+.attribution .mentor a:link,
+.attribution .mentor a:visited {
+  font-weight: bold; /* Bold text for mentor link */
+  text-decoration: underline; /* Underlined link */
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.attribution .mentor a:hover,
+.attribution .mentor a:active {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/*=========================
+=   Coder Link Styles    =
+==========================*/
+
+.attribution .coder {
+  font-size: 1.6rem; /* Slightly larger font size */
+  padding-top: 0.8rem;
+  font-family: var(--FontFamily-Headings), serif;
+}
+.attribution .coder a:link {
+  color: aquamarine;
+}
+.attribution .coder a:visited {
+  color: plum;
+}
+.attribution .coder a:link,
+.attribution .coder a:visited {
+  font-style: italic; /* Italic text for coder link */
+  text-decoration: none; /* No underline for contrast */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25); /* Subtle shadow */
+  transition: all 0.3s ease, color 0.3s ease; /* Smooth transitions */
+  display: block;
+}
+
+.attribution .coder a:hover,
+.attribution .coder a:active {
+  transform: rotate(2deg); /* Slight rotation on hover */
+  text-decoration: line-through;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.35); /* Slightly stronger shadow on hover */
+}
